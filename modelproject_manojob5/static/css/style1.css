@@ -1,0 +1,21 @@
+.button {
+  background-color: yellow;
+  border: groove #467508;
+  color: red;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+body{
+    text-align:center;
+    padding:200px 200px;
+}
+.jumbotron{
+    color:white;
+    background:red;
+    padding:50px 30px;
+}

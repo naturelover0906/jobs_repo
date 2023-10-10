@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{jobtitle}}</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    <h1>{{head_msg}}</h1>
+    <figure>
+    {% if type == 'hydjobs' %}
+    <img src="{% static 'images/1.jpeg' %}" alt="">
+    <img src="{% static 'images/2.jpeg' %}" alt="">
+    <img src="{% static 'images/3.jpeg' %}" alt="">
+    {% elif type == 'punejobs' %}
+    <img src="{% static 'images/4.jpeg' %}" alt="">
+    <img src="{% static 'images/5.jpeg' %}" alt="">
+    <img src="{% static 'images/6.jpeg' %}" alt="">
+    {% elif type == 'bngjobs' %}
+    <img src="{% static 'images/7.jpeg' %}" alt="">
+    <img src="{% static 'images/8.jpeg' %}" alt="">
+    <img src="{% static 'images/9.jpeg' %}" alt="">
+    {% endif %}
+    </figure>
+    <br><br><br>
+    {% if job_list %}
+    <table border="2">
+        <caption>{{cap_msg}}</caption>
+        <thead>
+            <th>Date</th>
+            <th>Company</th>
+            <th>Title</th>
+            <th>Eligibility</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+        </thead>
+        {% for job in job_list %}
+        <tr>
+            <td>{{job.date}}</td>
+            <td>{{job.company}}</td>
+            <td>{{job.title}}</td>
+            <td>{{job.eligible}}</td>
+            <td>{{job.address}}</td>
+            <td>{{job.email}}</td>
+            <td>{{job.phone}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No Records Found For Jobs Informations...!!!!!</p>
+    {% endif %}
+</body>
+</html>
